@@ -1,86 +1,48 @@
 <template>
   <div class="footer">
-    <div class="footer-in-top">
-      <div class="footer-dobin">
-        <div class="footer-dobin-left">
-          <span id="footer-h">Programmer-Zha</span>
-          <div class="under-table">
-            <div class="recommend-browser">
-              <span>推荐使用:</span>
-              <ul>
-                <li><img src="../assets/GOOGEL.png" alt="" /></li>
-                <li><img src="../assets/firefox.png" alt="" /></li>
-              </ul>
-            </div>
-            <div class="tags">
-              <!-- <span>Tips:</span> -->
-              <ul>
-                <li>
-                  <a-tag checkable color="#7816ff">前端</a-tag>
-                </li>
-                <li>
-                  <a-tag checkable color="#00b42a">Vue</a-tag>
-                </li>
-                <li>
-                  <a-tag checkable color="#7bc616">Nginx</a-tag>
-                </li>
-                <li>
-                  <a-tag checkable color="#165dff">Arco Design</a-tag>
-                </li>
-              </ul>
-            </div>
-            <div class="contact-me">
-              <ul>
-                <li>
-                  <span id="contect">联系我</span>
-                </li>
-                <li>
-                  <a-tooltip content="QQ:2848135295">
-                    <icon-qq />
-                  </a-tooltip>
-                </li>
-                <li>
-                  <a-tooltip content="暂无">
-                    <icon-github />
-                  </a-tooltip>
-                </li>
-                <li>
-                  <a-tooltip content="微信：19157720829">
-                    <icon-wechat />
-                  </a-tooltip>
-                </li>
-                <li>
-                  <a-tooltip content="E-mail:19157720829@yeah.net">
-                    <icon-email />
-                  </a-tooltip>
-                </li>
-                <li>
-                  <a-tooltip content="Tel:19157720829">
-                    <icon-phone />
-                  </a-tooltip>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <div class="footer-in">
+      <div class="footer-dobin-left">
+        <div class="footer-dob-left-in1">
+          <img src="../assets/logo.png" alt="here is logo" />
+          <span id="support">技术支持:</span>
+          <ul class="footer-in-tags">
+            <li>
+              <a-tag checkable color="#7816ff">前端</a-tag>
+            </li>
+            <li>
+              <a-tag checkable color="#00b42a">Vue</a-tag>
+            </li>
+            <li>
+              <a-tag checkable color="#165dff">Arco Design</a-tag>
+            </li>
+            <li>
+              <a-tag checkable color="#7bc616">Nginx</a-tag>
+            </li>
+          </ul>
         </div>
-        <div class="footer-dobin-right">
-          <a-descriptions :data="data" title="特别感谢" :column="1" />
-        </div>
+      </div>
+      <div class="footer-dobin-right">
+        <a-card class="card" title="特别声明" hoverable>
+          <template #extra>
+            <a-link>More</a-link>
+          </template>
+          您是访问本网站的第<span id="num">12344</span
+          >位用户,很高兴您能访问此网站，但希望您能知道：
+          <div id="footer-tip">{{ tip }}</div>
+        </a-card>
       </div>
     </div>
-    <div class="footer-in-bottom">
-      <div class="footer-in-bottom-left">
-        <a-tag size="medium">
+    <div class="footer-bottom">
+      <div class="footer-bottom-in-left">
+        <a-tag>
           <template #icon>
-            <icon-common />
+            <icon-copyright />
           </template>
-          Powered by ByteHero
+          Powered By ByteHero
         </a-tag>
-        <div class="span">
-          <span>Blog of Zha | 前端 | Vue</span>
-        </div>
+        <span id="copyright">&copy;CopyRight of Zha</span>
       </div>
-      <div class="footer-in-bottom-right">
+      <div class="footer-bottom-in-right">
         <span>皖ICP备2021016370号-1</span>
       </div>
     </div>
@@ -89,22 +51,10 @@
 
 <script>
 export default {
+  name: 'Footer',
   data () {
     return {
-      data: [
-        {
-          label: 'Vue',
-          value: '本站主要框架'
-        },
-        {
-          label: 'Visual Studio Code',
-          value: '轻量快捷的编辑器'
-        },
-        {
-          label: 'Nginx',
-          value: '网站服务器'
-        }
-      ]
+      tip: '本网站内容仅供于学习，不用作商业用途!'
     }
   }
 }
@@ -112,156 +62,95 @@ export default {
 
 <style lang='less' scoped>
 .footer {
-  height: 417px;
+  height: 400px;
   width: 100%;
-  background-color: #f7f8fa;
+  background-color: #ab2429;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  justify-content: end;
-  .footer-in-top {
-    height: 340px;
-    width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .footer-bottom {
     display: flex;
-    justify-content: center;
-    .footer-dobin {
+    justify-content: space-between;
+    height: 50px;
+    width: 90%;
+    .footer-bottom-in-left {
+      width: 400px;
       height: 100%;
-      width: 90%;
       display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #cbcbcb;
-      .footer-dobin-left {
-        height: 100%;
-        width: 400px;
-        #footer-h {
-          font-style: normal;
-          font-family: sans-serif;
-          font-weight: bold;
-          font-size: 20px;
-        }
-
-        .under-table {
-          height: 310px;
-          width: 100%;
-
-          .recommend-browser {
-            height: 40px;
-            width: 100%;
-            margin-top: 14px;
-            position: relative;
-
-            span {
-              font-size: 12px;
-              color: #4a4949;
-            }
-            ul {
-              display: block;
-              height: 50px;
-              list-style: none;
-              position: absolute;
-              top: -14px;
-              left: 18px;
-
-              li {
-                float: left;
-                height: 30px;
-                width: 30px;
-                text-align: center;
-                line-height: 30px;
-                margin-left: 10px;
-                &:nth-child(2) {
-                  margin-top: -4px;
-                }
-              }
-            }
-          }
-          .tags {
-            height: 200px;
-            width: 100%;
-            position: relative;
-            ul {
-              display: flex;
-              flex-wrap: wrap;
-              position: absolute;
-              left: -20px;
-            }
-            ul li {
-              list-style: none;
-              margin-left: 10px;
-              margin-top: 10px;
-            }
-          }
-          .contact-me {
-            margin-top: -20px;
-            height: 50px;
-            width: 330px;
-
-            ul {
-              display: flex;
-              justify-content: space-evenly;
-              align-items: center;
-              li {
-                list-style: none;
-                height: 50px;
-                width: 50px;
-                line-height: 50px;
-                text-align: center;
-                #contect {
-                  color: salmon;
-                  font-size: 14px;
-                  margin-right: 5px;
-                }
-              }
-            }
-          }
-        }
+      align-items: center;
+      justify-content: start;
+      #copyright{
+        margin-left: 10px;
+        margin-top: 5px;
+        font-size: 10px;
+        color: #f6e8cf;
       }
-      .footer-dobin-right {
-        height: 100%;
-        width: 400px;
-        .arco-descriptions{
-          margin-top: 40px;
-          min-width: 200px;
-        }
-      }
+    }
+    .footer-bottom-in-right{
+      display: flex;
+      align-items: center;
+      color: #f6e8cf;
     }
   }
-  .footer-in-bottom {
-    height: 50px auto;
-    // min-height: 50px;
-    width: 100%;
+  .footer-in {
+    height: 312px;
+    width: 90%;
+    margin-top: 20px;
+    border-bottom: 1px solid #f6e8cf;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    .footer-in-bottom-left {
-      height: 50px;
-      width: 450px;
-      line-height: 50px;
-      .span {
-        font-size: 10px;
-        color: #898989;
-        height: 20px;
-        width: 120px;
-        position: relative;
-        top: -33px;
-        left: 290px;
-        span {
-          position: absolute;
-          top: -15px;
-          left: 10px;
-          width: 180px;
+
+    .footer-dobin-left {
+      height: 100%;
+      width: 30%;
+
+      .footer-dob-left-in1 {
+        height: 200px;
+        position: absolute;
+
+        #support {
+          font-size: 18px;
+          color: #f6e8cf;
+          position: relative;
+          left: -270px;
+          top: 20px;
+        }
+        .footer-in-tags {
+          height: 50px;
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+
+          li {
+            list-style: none;
+            margin-right: 10px;
+          }
         }
       }
-      .arco-tag {
-        margin-left: 130px;
-        border: 1px solid #d4c6c6;
-      }
     }
-    .footer-in-bottom-right {
-      height: 50px;
-      width: 300px;
-      line-height: 50px;
-      color: #6f6f6f;
+
+    .footer-dobin-right {
+      height: 100%;
+      width: 23%;
+      .card {
+        height: 90%;
+        background-color: #f6e8cf;
+        .arco-link{
+          color: #ab2429;
+        }
+
+        #footer-tip {
+          height: 30px;
+          width: 100%;
+          margin-top: 10px;
+          text-indent: 2em;
+        }
+        #num {
+          font-size: 22px;
+        }
+      }
     }
   }
 }

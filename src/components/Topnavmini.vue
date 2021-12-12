@@ -2,6 +2,8 @@
   <div class="navtop">
     <div class="nav-box">
       <ul>
+        <li><a href="#">注册</a></li>
+        <li><a href="#">登录</a></li>
         <li>
           <a-dropdown trigger="hover">
             <a href="#">网站导航</a>
@@ -28,7 +30,7 @@ export default {
 <style lang='less' scoped>
 .navtop {
   height: 30px;
-  background: #e3e4e5;
+  background: #e8eaeb;
   border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
@@ -71,7 +73,7 @@ export default {
         color: #999999;
         text-decoration: none;
         &:hover {
-          color: rgb(22, 93, 255);
+          color: #ab2429;
           cursor: pointer;
         }
       }

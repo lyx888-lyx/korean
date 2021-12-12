@@ -1,16 +1,15 @@
 <template>
   <a-carousel
     :style="{
-      width: '100%',
-      height: '605px',
+      width: '1200px',
+      height: '480px',
     }"
     :auto-play="true"
     indicator-type="dot"
     show-arrow="hover"
-    animation-name="fade"
-    move-speed="5000"
+    move-speed = "2000"
   >
-    <a-carousel-item v-for="(image, index) in images" :key="index">
+    <a-carousel-item v-for="(image,index) in images" :key="index">
       <img
         :src="image"
         :style="{
@@ -34,3 +33,15 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+  body{
+    position: absolute;
+  }
+  .arco-carousel{
+    position: relative;
+    left: 50%;
+    // margin-left: -50%;
+    transform: translate(-50%);
+  }
+</style>

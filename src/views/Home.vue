@@ -2,8 +2,8 @@
   <div class="home">
     <Toptip></Toptip>
     <Topnavmini></Topnavmini>
-    <Carousel></Carousel>
     <Nav></Nav>
+    <Carousel></Carousel>
     <Main></Main>
     <Footer></Footer>
   </div>
